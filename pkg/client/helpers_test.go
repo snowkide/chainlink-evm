@@ -92,6 +92,7 @@ func (c *TestClientErrors) FinalizedStateUnavailable() string { return c.finaliz
 type TestNodePoolConfig struct {
 	NodePollFailureThreshold               uint32
 	NodePollSuccessThreshold               uint32
+	NodeRedialBackoffMin                   time.Duration
 	NodePollInterval                       time.Duration
 	NodeSelectionMode                      string
 	NodeSyncThreshold                      uint32
@@ -109,6 +110,7 @@ type TestNodePoolConfig struct {
 
 func (tc TestNodePoolConfig) PollFailureThreshold() uint32 { return tc.NodePollFailureThreshold }
 func (tc TestNodePoolConfig) PollSuccessThreshold() uint32 { return tc.NodePollSuccessThreshold }
+func (tc TestNodePoolConfig) RedialBackoffMin() time.Duration { return tc.NodeRedialBackoffMin }
 func (tc TestNodePoolConfig) PollInterval() time.Duration  { return tc.NodePollInterval }
 func (tc TestNodePoolConfig) SelectionMode() string        { return tc.NodeSelectionMode }
 func (tc TestNodePoolConfig) SyncThreshold() uint32        { return tc.NodeSyncThreshold }
