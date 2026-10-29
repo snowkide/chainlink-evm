@@ -108,12 +108,12 @@ type TestNodePoolConfig struct {
 	FinalizedStateCheckFailureThresholdVal uint32
 }
 
-func (tc TestNodePoolConfig) PollFailureThreshold() uint32 { return tc.NodePollFailureThreshold }
-func (tc TestNodePoolConfig) PollSuccessThreshold() uint32 { return tc.NodePollSuccessThreshold }
+func (tc TestNodePoolConfig) PollFailureThreshold() uint32    { return tc.NodePollFailureThreshold }
+func (tc TestNodePoolConfig) PollSuccessThreshold() uint32    { return tc.NodePollSuccessThreshold }
 func (tc TestNodePoolConfig) RedialBackoffMin() time.Duration { return tc.NodeRedialBackoffMin }
-func (tc TestNodePoolConfig) PollInterval() time.Duration  { return tc.NodePollInterval }
-func (tc TestNodePoolConfig) SelectionMode() string        { return tc.NodeSelectionMode }
-func (tc TestNodePoolConfig) SyncThreshold() uint32        { return tc.NodeSyncThreshold }
+func (tc TestNodePoolConfig) PollInterval() time.Duration     { return tc.NodePollInterval }
+func (tc TestNodePoolConfig) SelectionMode() string           { return tc.NodeSelectionMode }
+func (tc TestNodePoolConfig) SyncThreshold() uint32           { return tc.NodeSyncThreshold }
 func (tc TestNodePoolConfig) LeaseDuration() time.Duration {
 	return tc.NodeLeaseDuration
 }
