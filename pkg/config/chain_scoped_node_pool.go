@@ -19,6 +19,13 @@ func (n *NodePoolConfig) PollSuccessThreshold() uint32 {
 	return *n.C.PollSuccessThreshold
 }
 
+func (n *NodePoolConfig) RedialBackoffMin() time.Duration {
+	if n.C.RedialBackoffMin == nil {
+		return time.Second // not set by every config builder
+	}
+	return n.C.RedialBackoffMin.Duration()
+}
+
 func (n *NodePoolConfig) PollInterval() time.Duration {
 	return n.C.PollInterval.Duration()
 }
